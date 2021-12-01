@@ -8,15 +8,26 @@ import           Data.Foldable    (foldl')
 import           Prelude          hiding (readFile)
 
 main :: IO ()
-main = puzzle1 >>= print
+main = do
+    putStrLn "-- 1st December 2021 --"
 
-puzzle1 :: IO Int
-puzzle1 = do
     ns :: [Int] <- map read . lines <$> readFile "input/2021/day1.txt"
-    return $ length $ filter (== True) $ zipWith (<) (head ns : ns) ns
+
+    let puzzle1 = countIncreases ns
+    putStrLn $ "Puzzle 1: " ++ show puzzle1
+
+    let puzzle2 = countIncreases $ slidingWindow ns
+    putStrLn $ "Puzzle 2: " ++ show puzzle2
+
+countIncreases :: [Int] -> Int
+countIncreases ns = length
+    $ filter (== True)
+    $ zipWith (<) (head ns : ns) ns
     -- OR
-    -- return $ snd $ foldl' (\(prev, count) n ->
+    -- snd $ foldl' (\(prev, count) n ->
     --     (n, if n > prev then count + 1 else count)) (head ns, 0) ns
 
-puzzle2 :: IO Int
-puzzle2 = return 1
+slidingWindow :: [Int] -> [Int]
+slidingWindow ns = drop 2
+    $ zipWith (+) ns
+    $ zipWith (+) (0:ns) (0:0:ns)
