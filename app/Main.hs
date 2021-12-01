@@ -1,6 +1,6 @@
 module Main where
 
-import Lib
+import qualified Year2021
 
 main :: IO ()
-main = someFunc
+main = Year2021.main
