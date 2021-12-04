@@ -25,8 +25,10 @@ source-repository head
 
 library
   exposed-modules:
+      Utils
       Year2021
       Year2021.Day1
+      Year2021.Day2
   other-modules:
       Paths_advent_of_code
   hs-source-dirs:

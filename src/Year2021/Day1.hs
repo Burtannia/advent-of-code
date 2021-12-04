@@ -6,18 +6,14 @@ import           System.IO.Strict (readFile)
 
 import           Data.Foldable    (foldl')
 import           Prelude          hiding (readFile)
+import           Utils            (ppDay2021)
 
-main :: IO ()
-main = do
-    putStrLn "-- 1st December 2021 --"
-
+day1 :: IO ()
+day1 = do
     ns :: [Int] <- map read . lines <$> readFile "input/2021/day1.txt"
-
     let puzzle1 = countIncreases ns
-    putStrLn $ "Puzzle 1: " ++ show puzzle1
-
     let puzzle2 = countIncreases $ slidingWindow ns
-    putStrLn $ "Puzzle 2: " ++ show puzzle2
+    ppDay2021 "1st" puzzle1 puzzle2
 
 countIncreases :: [Int] -> Int
 countIncreases ns = length
