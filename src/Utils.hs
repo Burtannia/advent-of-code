@@ -1,5 +1,7 @@
 module Utils where
 
+import           Data.Char (toLower, toUpper)
+
 ppPuzzle :: Show a => Int -> a -> IO ()
 ppPuzzle n x = putStrLn $ "Puzzle " ++ show n ++ ": " ++ show x
 
@@ -11,3 +13,7 @@ ppDay year day x y = do
 
 ppDay2021 :: (Show a, Show b) => String -> a -> b -> IO ()
 ppDay2021 = ppDay 2021
+
+upperFirst :: String -> String
+upperFirst ""     = ""
+upperFirst (c:cs) = toUpper c : cs
