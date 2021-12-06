@@ -1,6 +1,7 @@
 module Utils where
 
-import           Data.Char (toLower, toUpper)
+import           Data.Char (digitToInt, toUpper)
+import           Numeric   (readInt)
 
 ppPuzzle :: Show a => Int -> a -> IO ()
 ppPuzzle n x = putStrLn $ "Puzzle " ++ show n ++ ": " ++ show x
@@ -17,3 +18,6 @@ ppDay2021 = ppDay 2021
 upperFirst :: String -> String
 upperFirst ""     = ""
 upperFirst (c:cs) = toUpper c : cs
+
+parseBin :: String -> Int
+parseBin = fst . head . readInt 2 (`elem` "01") digitToInt
