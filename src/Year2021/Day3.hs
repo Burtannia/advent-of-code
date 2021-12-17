@@ -2,11 +2,13 @@
 
 module Year2021.Day3 where
 
-import           Control.Arrow  ((&&&))
-import           Data.Bifunctor (bimap)
-import           Data.Foldable  (foldl')
-import           Data.List      (transpose, unzip)
-import           Utils          (parseBin, ppDay2021)
+import           Control.Arrow    ((&&&))
+import           Data.Bifunctor   (bimap)
+import           Data.Foldable    (foldl')
+import           Data.List        (transpose, unzip)
+import           Prelude          hiding (readFile)
+import           System.IO.Strict (readFile)
+import           Utils            (parseBin, ppDay2021)
 
 mostLeast :: String -> (Char, Char)
 mostLeast xs = if os >= zs then ('1','0') else ('0','1')

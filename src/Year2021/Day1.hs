@@ -2,10 +2,9 @@
 
 module Year2021.Day1 where
 
-import           System.IO.Strict (readFile)
-
 import           Data.Foldable    (foldl')
 import           Prelude          hiding (readFile)
+import           System.IO.Strict (readFile)
 import           Utils            (ppDay2021)
 
 day1 :: IO ()

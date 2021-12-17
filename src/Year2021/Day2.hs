@@ -3,8 +3,10 @@
 
 module Year2021.Day2 where
 
-import           Data.Foldable (foldl')
-import           Utils         (ppDay2021, upperFirst)
+import           Data.Foldable    (foldl')
+import           Prelude          hiding (readFile)
+import           System.IO.Strict (readFile)
+import           Utils            (ppDay2021, upperFirst)
 
 data BasicSub = BasicSub
     { subHoriz :: Int
