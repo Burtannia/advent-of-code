@@ -15,6 +15,9 @@ ppDay year day x y = do
 ppDay2021 :: (Show a, Show b) => String -> a -> b -> IO ()
 ppDay2021 = ppDay 2021
 
+ppDay2022 :: (Show a, Show b) => String -> a -> b -> IO ()
+ppDay2022 = ppDay 2021
+
 upperFirst :: String -> String
 upperFirst ""     = ""
 upperFirst (c:cs) = toUpper c : cs
