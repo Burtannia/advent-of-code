@@ -33,12 +33,15 @@ library
       Year2021.Day4
       Year2022
       Year2022.Day1
+      Year2022.Day2
+      Year2022.Day3
   other-modules:
       Paths_advent_of_code
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
+    , mtl
     , parsec
     , split
     , strict
@@ -54,6 +57,7 @@ executable advent-of-code-exe
   build-depends:
       advent-of-code
     , base >=4.7 && <5
+    , mtl
     , parsec
     , split
     , strict
@@ -70,6 +74,7 @@ test-suite advent-of-code-test
   build-depends:
       advent-of-code
     , base >=4.7 && <5
+    , mtl
     , parsec
     , split
     , strict

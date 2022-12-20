@@ -24,6 +24,7 @@ dependencies:
 - strict
 - parsec
 - split
+- mtl
 
 library:
   source-dirs: src
